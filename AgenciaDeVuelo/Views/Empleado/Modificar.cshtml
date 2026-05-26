@@ -1,0 +1,70 @@
+﻿@{
+    ViewBag.Title = "Modificar empleado";
+}
+
+<h2>Modificar empleado</h2>
+
+<form method="post">
+    <label>Usuario</label>
+    <input type="text" name="usuario" class="form-control" />
+
+    <br />
+
+    <input type="submit" value="Buscar" class="btn btn-primary" />
+</form>
+
+@if (ViewBag.Mensaje != null)
+{
+    <br />
+    <div class="alert alert-info">@ViewBag.Mensaje</div>
+}
+
+@if (ViewBag.Empleado != null)
+{
+    <hr />
+
+    <form method="post" action="/Empleado/GuardarModificacion">
+
+        <label>Usuario</label>
+        <input type="text"
+               name="usuario"
+               value="@ViewBag.Empleado.Usuario"
+               readonly
+               class="form-control" />
+
+        <br />
+
+        <label>Contraseña</label>
+        <input type="text"
+               name="contrasenia"
+               value="@ViewBag.Empleado.Contrasenia"
+               class="form-control" />
+
+        <br />
+
+        <label>Nombre completo</label>
+        <input type="text"
+               name="nombreCompleto"
+               value="@ViewBag.Empleado.NombreCompleto"
+               class="form-control" />
+
+        <br />
+
+        <label>Activo</label>
+        <input type="checkbox"
+               name="activo"
+               value="true"
+               @(ViewBag.Empleado.Activo ? "checked" : "") />
+
+        <br /><br />
+
+        <input type="submit"
+               value="Guardar cambios"
+               class="btn btn-warning" />
+
+    </form>
+}
+
+<br />
+
+@Html.ActionLink("Volver", "Mantenimiento", "Empleado")

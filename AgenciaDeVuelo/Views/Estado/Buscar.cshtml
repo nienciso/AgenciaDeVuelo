@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.Title = "Buscar estado";
+}
+
+<h2>Buscar estado</h2>
+
+<form method="post">
+    <label>Código</label>
+    <input type="text" name="codigo" class="form-control" minlength="4" maxlength="5" required />
+
+    <br />
+
+    <input type="submit" value="Buscar" class="btn btn-primary" />
+</form>
+
+@if (ViewBag.Mensaje != null)
+{
+    <br />
+    <div class="alert alert-info">@ViewBag.Mensaje</div>
+}
+
+@if (ViewBag.Estado != null)
+{
+    <hr />
+    <p><strong>Código:</strong> @ViewBag.Estado.Codigo</p>
+    <p><strong>Nombre:</strong> @ViewBag.Estado.Nombre</p>
+    <p><strong>País:</strong> @ViewBag.Estado.Pais</p>
+    <p><strong>Activo:</strong> @ViewBag.Estado.Activo</p>
+}
+
+<br />
+@Html.ActionLink("Volver", "Mantenimiento", "Estado")

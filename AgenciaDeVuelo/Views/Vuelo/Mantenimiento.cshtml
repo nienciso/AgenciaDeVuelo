@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "Mantenimiento de vuelos";
+}
+
+<h2>Mantenimiento de vuelos</h2>
+
+<ul>
+    <li>@Html.ActionLink("Alta de vuelo", "Alta", "Vuelo")</li>
+    <li>@Html.ActionLink("Buscar vuelo", "Buscar", "Vuelo")</li>
+    <li>@Html.ActionLink("Modificar vuelo", "Modificar", "Vuelo")</li>
+    <li>@Html.ActionLink("Baja de vuelo", "Baja", "Vuelo")</li>
+</ul>
+
+<br />
+
+@Html.ActionLink("Volver al menú principal", "Menu", "Empleado")

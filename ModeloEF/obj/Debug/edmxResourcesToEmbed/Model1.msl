@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="AgenciaModeloStoreContainer" CdmEntityContainer="AgenciaDeVueloEntities">
+    <EntitySetMapping Name="Empleados">
+      <EntityTypeMapping TypeName="AgenciaModelo.Empleados">
+        <MappingFragment StoreEntitySet="Empleados">
+          <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+          <ScalarProperty Name="Contrasenia" ColumnName="Contrasenia" />
+          <ScalarProperty Name="NombreCompleto" ColumnName="NombreCompleto" />
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Estados">
+      <EntityTypeMapping TypeName="AgenciaModelo.Estados">
+        <MappingFragment StoreEntitySet="Estados">
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Pais" ColumnName="Pais" />
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Hospedajes">
+      <EntityTypeMapping TypeName="AgenciaModelo.Hospedajes">
+        <MappingFragment StoreEntitySet="Hospedajes">
+          <ScalarProperty Name="CodigoInterno" ColumnName="CodigoInterno" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="TipoHospedaje" ColumnName="TipoHospedaje" />
+          <ScalarProperty Name="PrecioNochePersona" ColumnName="PrecioNochePersona" />
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PaqueteHospedaje">
+      <EntityTypeMapping TypeName="AgenciaModelo.PaqueteHospedaje">
+        <MappingFragment StoreEntitySet="PaqueteHospedaje">
+          <ScalarProperty Name="CodigoPaquete" ColumnName="CodigoPaquete" />
+          <ScalarProperty Name="CodigoHospedaje" ColumnName="CodigoHospedaje" />
+          <ScalarProperty Name="CantNoches" ColumnName="CantNoches" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Paquetes">
+      <EntityTypeMapping TypeName="AgenciaModelo.Paquetes">
+        <MappingFragment StoreEntitySet="Paquetes">
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="Titulo" ColumnName="Titulo" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="CantDias" ColumnName="CantDias" />
+          <ScalarProperty Name="PrecioIndividual" ColumnName="PrecioIndividual" />
+          <ScalarProperty Name="PrecioDoble" ColumnName="PrecioDoble" />
+          <ScalarProperty Name="PrecioTriple" ColumnName="PrecioTriple" />
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vuelos">
+      <EntityTypeMapping TypeName="AgenciaModelo.Vuelos">
+        <MappingFragment StoreEntitySet="Vuelos">
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="FechaHoraPartida" ColumnName="FechaHoraPartida" />
+          <ScalarProperty Name="FechaHoraLlegada" ColumnName="FechaHoraLlegada" />
+          <ScalarProperty Name="PrecioPasaje" ColumnName="PrecioPasaje" />
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="FK__Paquetes__Usuari__5629CD9C" TypeName="AgenciaModelo.FK__Paquetes__Usuari__5629CD9C" StoreEntitySet="Paquetes">
+      <EndProperty Name="Empleados">
+        <ScalarProperty Name="Usuario" ColumnName="UsuarioEmpleado" />
+      </EndProperty>
+      <EndProperty Name="Paquetes">
+        <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK__Hospedaje__Codig__4BAC3F29" TypeName="AgenciaModelo.FK__Hospedaje__Codig__4BAC3F29" StoreEntitySet="Hospedajes">
+      <EndProperty Name="Estados">
+        <ScalarProperty Name="Codigo" ColumnName="CodigoEstado" />
+      </EndProperty>
+      <EndProperty Name="Hospedajes">
+        <ScalarProperty Name="CodigoInterno" ColumnName="CodigoInterno" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK__Paquetes__Codigo__534D60F1" TypeName="AgenciaModelo.FK__Paquetes__Codigo__534D60F1" StoreEntitySet="Paquetes">
+      <EndProperty Name="Estados">
+        <ScalarProperty Name="Codigo" ColumnName="CodigoEstadoDestino" />
+      </EndProperty>
+      <EndProperty Name="Paquetes">
+        <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK__Vuelos__CodigoEs__4222D4EF" TypeName="AgenciaModelo.FK__Vuelos__CodigoEs__4222D4EF" StoreEntitySet="Vuelos">
+      <EndProperty Name="Estados">
+        <ScalarProperty Name="Codigo" ColumnName="CodigoEstadoPartida" />
+      </EndProperty>
+      <EndProperty Name="Vuelos">
+        <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK__Vuelos__CodigoEs__4316F928" TypeName="AgenciaModelo.FK__Vuelos__CodigoEs__4316F928" StoreEntitySet="Vuelos">
+      <EndProperty Name="Estados">
+        <ScalarProperty Name="Codigo" ColumnName="CodigoEstadoLlegada" />
+      </EndProperty>
+      <EndProperty Name="Vuelos">
+        <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK__Paquetes__Codigo__5441852A" TypeName="AgenciaModelo.FK__Paquetes__Codigo__5441852A" StoreEntitySet="Paquetes">
+      <EndProperty Name="Vuelos">
+        <ScalarProperty Name="Codigo" ColumnName="CodigoVueloIda" />
+      </EndProperty>
+      <EndProperty Name="Paquetes">
+        <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK__Paquetes__Codigo__5535A963" TypeName="AgenciaModelo.FK__Paquetes__Codigo__5535A963" StoreEntitySet="Paquetes">
+      <EndProperty Name="Vuelos">
+        <ScalarProperty Name="Codigo" ColumnName="CodigoVueloVuelta" />
+      </EndProperty>
+      <EndProperty Name="Paquetes">
+        <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = "Buscar empleado";
+}
+
+<h2>Buscar empleado</h2>
+
+<form method="post">
+    <label>Usuario</label>
+    <input type="text" name="usuario" class="form-control" />
+
+    <br />
+
+    <input type="submit" value="Buscar" class="btn btn-primary" />
+</form>
+
+@if (ViewBag.Mensaje != null)
+{
+    <br />
+    <div class="alert alert-info">@ViewBag.Mensaje</div>
+}
+
+@if (ViewBag.Empleado != null)
+{
+    <hr />
+    <p><strong>Usuario:</strong> @ViewBag.Empleado.Usuario</p>
+    <p><strong>Nombre completo:</strong> @ViewBag.Empleado.NombreCompleto</p>
+    <p><strong>Activo:</strong> @ViewBag.Empleado.Activo</p>
+}
+
+<br />
+@Html.ActionLink("Volver al menú", "Menu", "Empleado")

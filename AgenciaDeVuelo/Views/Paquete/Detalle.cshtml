@@ -1,0 +1,83 @@
+﻿@model Entidades.Paquete
+
+@{
+    ViewBag.Title = "Detalle de paquete";
+}
+
+<h2>Detalle de paquete</h2>
+
+@if (ViewBag.Mensaje != null)
+{
+    <div class="alert alert-info">
+        @ViewBag.Mensaje
+    </div>
+}
+
+@if (Model != null)
+{
+    <h3>Datos del paquete</h3>
+
+    <p><strong>Código:</strong> @Model.Codigo</p>
+    <p><strong>Título:</strong> @Model.Titulo</p>
+    <p><strong>Descripción:</strong> @Model.Descripcion</p>
+    <p><strong>Estado destino:</strong> @Model.EstadoDestino.Nombre - @Model.EstadoDestino.Pais</p>
+    <p><strong>Cantidad de días:</strong> @Model.CantDias</p>
+    <p><strong>Precio individual:</strong> @Model.PrecioIndividual</p>
+    <p><strong>Precio doble:</strong> @Model.PrecioDoble</p>
+    <p><strong>Precio triple:</strong> @Model.PrecioTriple</p>
+    <p><strong>Empleado:</strong> @Model.Empleado.Usuario - @Model.Empleado.NombreCompleto</p>
+    <p><strong>Activo:</strong> @Model.Activo</p>
+
+    <hr />
+
+    <h3>Vuelo de ida</h3>
+
+    <p><strong>Código:</strong> @Model.VueloIda.Codigo</p>
+    <p><strong>Fecha/hora partida:</strong> @Model.VueloIda.FechaHoraPartida</p>
+    <p><strong>Estado partida:</strong> @Model.VueloIda.EstadoPartida.Nombre - @Model.VueloIda.EstadoPartida.Pais</p>
+    <p><strong>Fecha/hora llegada:</strong> @Model.VueloIda.FechaHoraLlegada</p>
+    <p><strong>Estado llegada:</strong> @Model.VueloIda.EstadoLlegada.Nombre - @Model.VueloIda.EstadoLlegada.Pais</p>
+    <p><strong>Precio pasaje:</strong> @Model.VueloIda.PrecioPasaje</p>
+
+    <hr />
+
+    <h3>Vuelo de vuelta</h3>
+
+    <p><strong>Código:</strong> @Model.VueloVuelta.Codigo</p>
+    <p><strong>Fecha/hora partida:</strong> @Model.VueloVuelta.FechaHoraPartida</p>
+    <p><strong>Estado partida:</strong> @Model.VueloVuelta.EstadoPartida.Nombre - @Model.VueloVuelta.EstadoPartida.Pais</p>
+    <p><strong>Fecha/hora llegada:</strong> @Model.VueloVuelta.FechaHoraLlegada</p>
+    <p><strong>Estado llegada:</strong> @Model.VueloVuelta.EstadoLlegada.Nombre - @Model.VueloVuelta.EstadoLlegada.Pais</p>
+    <p><strong>Precio pasaje:</strong> @Model.VueloVuelta.PrecioPasaje</p>
+
+    <hr />
+
+    <h3>Hospedajes incluidos</h3>
+
+    <table class="table">
+        <tr>
+            <th>Código</th>
+            <th>Nombre</th>
+            <th>Dirección</th>
+            <th>Tipo</th>
+            <th>Precio noche/persona</th>
+            <th>Noches</th>
+        </tr>
+
+        @foreach (var ph in Model.Hospedajes)
+        {
+            <tr>
+                <td>@ph.Hospedaje.CodigoInterno</td>
+                <td>@ph.Hospedaje.Nombre</td>
+                <td>@ph.Hospedaje.Direccion</td>
+                <td>@ph.Hospedaje.TipoHospedaje</td>
+                <td>@ph.Hospedaje.PrecioNochePersona</td>
+                <td>@ph.CantNoches</td>
+            </tr>
+        }
+    </table>
+}
+
+<br />
+
+@Html.ActionLink("Volver al listado", "Listado", "Paquete")

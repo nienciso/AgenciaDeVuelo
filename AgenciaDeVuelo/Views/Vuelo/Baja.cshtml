@@ -1,0 +1,24 @@
+﻿@{
+    ViewBag.Title = "Baja de vuelo";
+}
+
+<h2>Baja de vuelo</h2>
+
+<form method="post">
+    <label>Código</label>
+    <input type="text" name="codigo" class="form-control" maxlength="10" required />
+
+    <br />
+
+    <input type="submit" value="Dar de baja" class="btn btn-danger" />
+</form>
+
+@if (ViewBag.Mensaje != null)
+{
+    <br />
+    <div class="alert alert-info">@ViewBag.Mensaje</div>
+}
+
+<br />
+
+@Html.ActionLink("Volver", "Mantenimiento", "Vuelo")

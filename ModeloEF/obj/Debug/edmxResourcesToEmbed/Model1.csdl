@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AgenciaModelo" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Empleados">
+    <Key>
+      <PropertyRef Name="Usuario" />
+    </Key>
+    <Property Name="Usuario" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Contrasenia" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NombreCompleto" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Activo" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Paquetes" Relationship="Self.FK__Paquetes__Usuari__5629CD9C" FromRole="Empleados" ToRole="Paquetes" />
+  </EntityType>
+  <EntityType Name="Estados">
+    <Key>
+      <PropertyRef Name="Codigo" />
+    </Key>
+    <Property Name="Codigo" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Pais" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Activo" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Hospedajes" Relationship="Self.FK__Hospedaje__Codig__4BAC3F29" FromRole="Estados" ToRole="Hospedajes" />
+    <NavigationProperty Name="Paquetes" Relationship="Self.FK__Paquetes__Codigo__534D60F1" FromRole="Estados" ToRole="Paquetes" />
+    <NavigationProperty Name="Vuelos" Relationship="Self.FK__Vuelos__CodigoEs__4222D4EF" FromRole="Estados" ToRole="Vuelos" />
+    <NavigationProperty Name="Vuelos1" Relationship="Self.FK__Vuelos__CodigoEs__4316F928" FromRole="Estados" ToRole="Vuelos" />
+  </EntityType>
+  <EntityType Name="Hospedajes">
+    <Key>
+      <PropertyRef Name="CodigoInterno" />
+    </Key>
+    <Property Name="CodigoInterno" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Nombre" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Direccion" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TipoHospedaje" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PrecioNochePersona" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="Activo" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Estados" Relationship="Self.FK__Hospedaje__Codig__4BAC3F29" FromRole="Hospedajes" ToRole="Estados" />
+    <NavigationProperty Name="PaqueteHospedaje" Relationship="Self.FK__PaqueteHo__Codig__5BE2A6F2" FromRole="Hospedajes" ToRole="PaqueteHospedaje" />
+  </EntityType>
+  <EntityType Name="PaqueteHospedaje">
+    <Key>
+      <PropertyRef Name="CodigoPaquete" />
+      <PropertyRef Name="CodigoHospedaje" />
+    </Key>
+    <Property Name="CodigoPaquete" Type="Int32" Nullable="false" />
+    <Property Name="CodigoHospedaje" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CantNoches" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Hospedajes" Relationship="Self.FK__PaqueteHo__Codig__5BE2A6F2" FromRole="PaqueteHospedaje" ToRole="Hospedajes" />
+    <NavigationProperty Name="Paquetes" Relationship="Self.FK__PaqueteHo__Codig__5AEE82B9" FromRole="PaqueteHospedaje" ToRole="Paquetes" />
+  </EntityType>
+  <EntityType Name="Paquetes">
+    <Key>
+      <PropertyRef Name="Codigo" />
+    </Key>
+    <Property Name="Codigo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Titulo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Descripcion" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CantDias" Type="Int32" Nullable="false" />
+    <Property Name="PrecioIndividual" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="PrecioDoble" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="PrecioTriple" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="Activo" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Empleados" Relationship="Self.FK__Paquetes__Usuari__5629CD9C" FromRole="Paquetes" ToRole="Empleados" />
+    <NavigationProperty Name="Estados" Relationship="Self.FK__Paquetes__Codigo__534D60F1" FromRole="Paquetes" ToRole="Estados" />
+    <NavigationProperty Name="PaqueteHospedaje" Relationship="Self.FK__PaqueteHo__Codig__5AEE82B9" FromRole="Paquetes" ToRole="PaqueteHospedaje" />
+    <NavigationProperty Name="Vuelos" Relationship="Self.FK__Paquetes__Codigo__5441852A" FromRole="Paquetes" ToRole="Vuelos" />
+    <NavigationProperty Name="Vuelos1" Relationship="Self.FK__Paquetes__Codigo__5535A963" FromRole="Paquetes" ToRole="Vuelos" />
+  </EntityType>
+  <EntityType Name="Vuelos">
+    <Key>
+      <PropertyRef Name="Codigo" />
+    </Key>
+    <Property Name="Codigo" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="FechaHoraPartida" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="FechaHoraLlegada" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="PrecioPasaje" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="Activo" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Estados" Relationship="Self.FK__Vuelos__CodigoEs__4222D4EF" FromRole="Vuelos" ToRole="Estados" />
+    <NavigationProperty Name="Estados1" Relationship="Self.FK__Vuelos__CodigoEs__4316F928" FromRole="Vuelos" ToRole="Estados" />
+    <NavigationProperty Name="Paquetes" Relationship="Self.FK__Paquetes__Codigo__5441852A" FromRole="Vuelos" ToRole="Paquetes" />
+    <NavigationProperty Name="Paquetes1" Relationship="Self.FK__Paquetes__Codigo__5535A963" FromRole="Vuelos" ToRole="Paquetes" />
+  </EntityType>
+  <Association Name="FK__Paquetes__Usuari__5629CD9C">
+    <End Role="Empleados" Type="Self.Empleados" Multiplicity="1" />
+    <End Role="Paquetes" Type="Self.Paquetes" Multiplicity="*" />
+  </Association>
+  <Association Name="FK__Hospedaje__Codig__4BAC3F29">
+    <End Role="Estados" Type="Self.Estados" Multiplicity="1" />
+    <End Role="Hospedajes" Type="Self.Hospedajes" Multiplicity="*" />
+  </Association>
+  <Association Name="FK__Paquetes__Codigo__534D60F1">
+    <End Role="Estados" Type="Self.Estados" Multiplicity="1" />
+    <End Role="Paquetes" Type="Self.Paquetes" Multiplicity="*" />
+  </Association>
+  <Association Name="FK__Vuelos__CodigoEs__4222D4EF">
+    <End Role="Estados" Type="Self.Estados" Multiplicity="1" />
+    <End Role="Vuelos" Type="Self.Vuelos" Multiplicity="*" />
+  </Association>
+  <Association Name="FK__Vuelos__CodigoEs__4316F928">
+    <End Role="Estados" Type="Self.Estados" Multiplicity="1" />
+    <End Role="Vuelos" Type="Self.Vuelos" Multiplicity="*" />
+  </Association>
+  <Association Name="FK__PaqueteHo__Codig__5BE2A6F2">
+    <End Role="Hospedajes" Type="Self.Hospedajes" Multiplicity="1" />
+    <End Role="PaqueteHospedaje" Type="Self.PaqueteHospedaje" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Hospedajes">
+        <PropertyRef Name="CodigoInterno" />
+      </Principal>
+      <Dependent Role="PaqueteHospedaje">
+        <PropertyRef Name="CodigoHospedaje" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PaqueteHo__Codig__5AEE82B9">
+    <End Role="Paquetes" Type="Self.Paquetes" Multiplicity="1" />
+    <End Role="PaqueteHospedaje" Type="Self.PaqueteHospedaje" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Paquetes">
+        <PropertyRef Name="Codigo" />
+      </Principal>
+      <Dependent Role="PaqueteHospedaje">
+        <PropertyRef Name="CodigoPaquete" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Paquetes__Codigo__5441852A">
+    <End Role="Vuelos" Type="Self.Vuelos" Multiplicity="1" />
+    <End Role="Paquetes" Type="Self.Paquetes" Multiplicity="*" />
+  </Association>
+  <Association Name="FK__Paquetes__Codigo__5535A963">
+    <End Role="Vuelos" Type="Self.Vuelos" Multiplicity="1" />
+    <End Role="Paquetes" Type="Self.Paquetes" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="AgenciaDeVueloEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Empleados" EntityType="Self.Empleados" />
+    <EntitySet Name="Estados" EntityType="Self.Estados" />
+    <EntitySet Name="Hospedajes" EntityType="Self.Hospedajes" />
+    <EntitySet Name="PaqueteHospedaje" EntityType="Self.PaqueteHospedaje" />
+    <EntitySet Name="Paquetes" EntityType="Self.Paquetes" />
+    <EntitySet Name="Vuelos" EntityType="Self.Vuelos" />
+    <AssociationSet Name="FK__Paquetes__Usuari__5629CD9C" Association="Self.FK__Paquetes__Usuari__5629CD9C">
+      <End Role="Empleados" EntitySet="Empleados" />
+      <End Role="Paquetes" EntitySet="Paquetes" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Hospedaje__Codig__4BAC3F29" Association="Self.FK__Hospedaje__Codig__4BAC3F29">
+      <End Role="Estados" EntitySet="Estados" />
+      <End Role="Hospedajes" EntitySet="Hospedajes" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Paquetes__Codigo__534D60F1" Association="Self.FK__Paquetes__Codigo__534D60F1">
+      <End Role="Estados" EntitySet="Estados" />
+      <End Role="Paquetes" EntitySet="Paquetes" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Vuelos__CodigoEs__4222D4EF" Association="Self.FK__Vuelos__CodigoEs__4222D4EF">
+      <End Role="Estados" EntitySet="Estados" />
+      <End Role="Vuelos" EntitySet="Vuelos" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Vuelos__CodigoEs__4316F928" Association="Self.FK__Vuelos__CodigoEs__4316F928">
+      <End Role="Estados" EntitySet="Estados" />
+      <End Role="Vuelos" EntitySet="Vuelos" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PaqueteHo__Codig__5BE2A6F2" Association="Self.FK__PaqueteHo__Codig__5BE2A6F2">
+      <End Role="Hospedajes" EntitySet="Hospedajes" />
+      <End Role="PaqueteHospedaje" EntitySet="PaqueteHospedaje" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PaqueteHo__Codig__5AEE82B9" Association="Self.FK__PaqueteHo__Codig__5AEE82B9">
+      <End Role="Paquetes" EntitySet="Paquetes" />
+      <End Role="PaqueteHospedaje" EntitySet="PaqueteHospedaje" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Paquetes__Codigo__5441852A" Association="Self.FK__Paquetes__Codigo__5441852A">
+      <End Role="Vuelos" EntitySet="Vuelos" />
+      <End Role="Paquetes" EntitySet="Paquetes" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Paquetes__Codigo__5535A963" Association="Self.FK__Paquetes__Codigo__5535A963">
+      <End Role="Vuelos" EntitySet="Vuelos" />
+      <End Role="Paquetes" EntitySet="Paquetes" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

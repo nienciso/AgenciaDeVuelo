@@ -1,0 +1,57 @@
+﻿@model List<Entidades.Hospedaje>
+
+@{
+    ViewBag.Title = "Listado de hospedajes";
+}
+
+<h2>Listado de hospedajes</h2>
+
+<form method="get">
+    <label>Filtrar por nombre</label>
+    <input type="text"
+           name="filtroNombre"
+           value="@ViewBag.FiltroNombre"
+           class="form-control" />
+
+    <br />
+
+    <input type="submit"
+           value="Filtrar"
+           class="btn btn-primary" />
+</form>
+
+<br />
+
+<table class="table">
+    <tr>
+        <th>Código</th>
+        <th>Nombre</th>
+        <th>Estado</th>
+        <th>Tipo</th>
+        <th>Precio noche/persona</th>
+        <th>Paquetes asociados</th>
+    </tr>
+
+    @foreach (var h in Model)
+    {
+        <tr>
+            <td>@h.CodigoInterno</td>
+            <td>@h.Nombre</td>
+            <td>@h.Estado.Nombre - @h.Estado.Pais</td>
+            <td>@h.TipoHospedaje</td>
+            <td>@h.PrecioNochePersona</td>
+            <td>
+                @Html.ActionLink(
+                    "Ver paquetes",
+                    "PaquetesPorHospedaje",
+                    "Paquete",
+                    new { codigoHospedaje = h.CodigoInterno },
+                    null)
+            </td>
+        </tr>
+    }
+</table>
+
+<br />
+
+@Html.ActionLink("Volver al menú principal", "Menu", "Empleado")

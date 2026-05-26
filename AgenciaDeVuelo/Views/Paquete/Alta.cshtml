@@ -1,0 +1,199 @@
+﻿@{
+    ViewBag.Title = "Alta";
+}
+
+<h2>Alta de paquete de viaje</h2>
+
+<form method="post">
+
+    <label>Título</label>
+    <input type="text"
+           name="titulo"
+           class="form-control"
+           maxlength="100"
+           required />
+
+    <br />
+
+    <label>Descripción</label>
+    <textarea name="descripcion"
+              class="form-control"
+              maxlength="500"
+              required></textarea>
+
+    <br />
+
+    <label>Estado destino</label>
+    <select name="codigoEstadoDestino"
+            class="form-control"
+            required>
+
+        @foreach (var e in ViewBag.Estados)
+        {
+            <option value="@e.Codigo">
+                @e.Nombre - @e.Pais
+            </option>
+        }
+
+    </select>
+
+    <br />
+
+    <label>Vuelo ida</label>
+    <select name="codigoVueloIda"
+            class="form-control"
+            required>
+
+        @foreach (var v in ViewBag.Vuelos)
+        {
+            <option value="@v.Codigo">
+                @v.Codigo -
+                @v.EstadoPartida.Nombre
+                a
+                @v.EstadoLlegada.Nombre -
+                @v.FechaHoraPartida
+            </option>
+        }
+
+    </select>
+
+    <br />
+
+    <label>Vuelo vuelta</label>
+    <select name="codigoVueloVuelta"
+            class="form-control"
+            required>
+
+        @foreach (var v in ViewBag.Vuelos)
+        {
+            <option value="@v.Codigo">
+                @v.Codigo -
+                @v.EstadoPartida.Nombre
+                a
+                @v.EstadoLlegada.Nombre -
+                @v.FechaHoraPartida
+            </option>
+        }
+
+    </select>
+
+    <br />
+
+    <hr />
+
+    <h4>Hospedajes del paquete</h4>
+
+    <p>Debe agregar al menos un hospedaje.</p>
+
+    <label>Hospedaje</label>
+    <select id="hospedajeSeleccionado" class="form-control">
+
+        @foreach (var h in ViewBag.Hospedajes)
+        {
+            <option value="@h.CodigoInterno">
+                @h.Nombre -
+                @h.Estado.Nombre -
+                @h.TipoHospedaje
+            </option>
+        }
+
+    </select>
+
+    <br />
+
+    <label>Cantidad de noches</label>
+    <input type="number"
+           id="nochesSeleccionadas"
+           class="form-control"
+           min="1" />
+
+    <br />
+
+    <button type="button"
+            class="btn btn-secondary"
+            onclick="agregarHospedaje()">
+        Agregar hospedaje
+    </button>
+
+    <br />
+    <br />
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Código</th>
+                <th>Hospedaje</th>
+                <th>Noches</th>
+                <th></th>
+            </tr>
+        </thead>
+
+        <tbody id="tablaHospedajes">
+        </tbody>
+    </table>
+
+    <br />
+
+    <input type="submit"
+           value="Alta paquete"
+           class="btn btn-primary" />
+
+</form>
+
+@if (ViewBag.Mensaje != null)
+{
+    <br />
+
+    <div class="alert alert-info">
+        @ViewBag.Mensaje
+    </div>
+}
+
+<br />
+
+@Html.ActionLink("Volver al menú principal", "Menu", "Empleado")
+
+<script>
+    function agregarHospedaje() {
+        var combo = document.getElementById("hospedajeSeleccionado");
+        var codigo = combo.value;
+        var texto = combo.options[combo.selectedIndex].text;
+        var noches = document.getElementById("nochesSeleccionadas").value;
+
+        if (noches == "" || noches <= 0) {
+            alert("Debe ingresar una cantidad de noches válida.");
+            return;
+        }
+
+        var tabla = document.getElementById("tablaHospedajes");
+        var fila = document.createElement("tr");
+
+        fila.innerHTML =
+            "<td>" +
+            codigo +
+            "<input type='hidden' name='codigosHospedaje' value='" + codigo + "' />" +
+            "</td>" +
+
+            "<td>" +
+            texto +
+            "</td>" +
+
+            "<td>" +
+            noches +
+            "<input type='hidden' name='cantidadesNoches' value='" + noches + "' />" +
+            "</td>" +
+
+            "<td>" +
+            "<button type='button' class='btn btn-danger btn-sm' onclick='eliminarFila(this)'>Quitar</button>" +
+            "</td>";
+
+        tabla.appendChild(fila);
+
+        document.getElementById("nochesSeleccionadas").value = "";
+    }
+
+    function eliminarFila(boton) {
+        var fila = boton.parentNode.parentNode;
+        fila.parentNode.removeChild(fila);
+    }
+</script>
