@@ -16,3 +16,12 @@ C:\Users\User\OneDrive\Desktop\ANALISTA PROGRAMADOR WEB .NET\AgenciaDeVuelo\Pers
 C:\Users\User\OneDrive\Desktop\ANALISTA PROGRAMADOR WEB .NET\AgenciaDeVuelo\Persistencia\obj\Debug\Persistencia.csproj.CopyComplete
 C:\Users\User\OneDrive\Desktop\ANALISTA PROGRAMADOR WEB .NET\AgenciaDeVuelo\Persistencia\obj\Debug\Persistencia.dll
 C:\Users\User\OneDrive\Desktop\ANALISTA PROGRAMADOR WEB .NET\AgenciaDeVuelo\Persistencia\obj\Debug\Persistencia.pdb
+C:\Users\User\Documents\GitHub\AgenciaDeVuelo\Persistencia\bin\Debug\Persistencia.dll
+C:\Users\User\Documents\GitHub\AgenciaDeVuelo\Persistencia\bin\Debug\Persistencia.pdb
+C:\Users\User\Documents\GitHub\AgenciaDeVuelo\Persistencia\bin\Debug\Entidades.dll
+C:\Users\User\Documents\GitHub\AgenciaDeVuelo\Persistencia\bin\Debug\Entidades.pdb
+C:\Users\User\Documents\GitHub\AgenciaDeVuelo\Persistencia\obj\Debug\Persistencia.csproj.AssemblyReference.cache
+C:\Users\User\Documents\GitHub\AgenciaDeVuelo\Persistencia\obj\Debug\Persistencia.csproj.CoreCompileInputs.cache
+C:\Users\User\Documents\GitHub\AgenciaDeVuelo\Persistencia\obj\Debug\Persistencia.csproj.CopyComplete
+C:\Users\User\Documents\GitHub\AgenciaDeVuelo\Persistencia\obj\Debug\Persistencia.dll
+C:\Users\User\Documents\GitHub\AgenciaDeVuelo\Persistencia\obj\Debug\Persistencia.pdb

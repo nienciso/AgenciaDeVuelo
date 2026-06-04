@@ -20,3 +20,14 @@ C:\Users\User\OneDrive\Desktop\ANALISTA PROGRAMADOR WEB .NET\AgenciaDeVuelo\Logi
 C:\Users\User\OneDrive\Desktop\ANALISTA PROGRAMADOR WEB .NET\AgenciaDeVuelo\Logica\obj\Debug\Logica.csproj.CopyComplete
 C:\Users\User\OneDrive\Desktop\ANALISTA PROGRAMADOR WEB .NET\AgenciaDeVuelo\Logica\obj\Debug\Logica.dll
 C:\Users\User\OneDrive\Desktop\ANALISTA PROGRAMADOR WEB .NET\AgenciaDeVuelo\Logica\obj\Debug\Logica.pdb
+C:\Users\User\Documents\GitHub\AgenciaDeVuelo\Logica\bin\Debug\Logica.dll
+C:\Users\User\Documents\GitHub\AgenciaDeVuelo\Logica\bin\Debug\Logica.pdb
+C:\Users\User\Documents\GitHub\AgenciaDeVuelo\Logica\bin\Debug\Entidades.dll
+C:\Users\User\Documents\GitHub\AgenciaDeVuelo\Logica\bin\Debug\Persistencia.dll
+C:\Users\User\Documents\GitHub\AgenciaDeVuelo\Logica\bin\Debug\Entidades.pdb
+C:\Users\User\Documents\GitHub\AgenciaDeVuelo\Logica\bin\Debug\Persistencia.pdb
+C:\Users\User\Documents\GitHub\AgenciaDeVuelo\Logica\obj\Debug\Logica.csproj.AssemblyReference.cache
+C:\Users\User\Documents\GitHub\AgenciaDeVuelo\Logica\obj\Debug\Logica.csproj.CoreCompileInputs.cache
+C:\Users\User\Documents\GitHub\AgenciaDeVuelo\Logica\obj\Debug\Logica.csproj.CopyComplete
+C:\Users\User\Documents\GitHub\AgenciaDeVuelo\Logica\obj\Debug\Logica.dll
+C:\Users\User\Documents\GitHub\AgenciaDeVuelo\Logica\obj\Debug\Logica.pdb

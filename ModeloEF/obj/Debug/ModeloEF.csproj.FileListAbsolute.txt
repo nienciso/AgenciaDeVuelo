@@ -22,3 +22,15 @@ C:\Users\User\OneDrive\Desktop\ANALISTA PROGRAMADOR WEB .NET\AgenciaDeVuelo\Mode
 C:\Users\User\OneDrive\Desktop\ANALISTA PROGRAMADOR WEB .NET\AgenciaDeVuelo\ModeloEF\obj\Debug\ModeloEF.csproj.CopyComplete
 C:\Users\User\OneDrive\Desktop\ANALISTA PROGRAMADOR WEB .NET\AgenciaDeVuelo\ModeloEF\obj\Debug\ModeloEF.dll
 C:\Users\User\OneDrive\Desktop\ANALISTA PROGRAMADOR WEB .NET\AgenciaDeVuelo\ModeloEF\obj\Debug\ModeloEF.pdb
+C:\Users\User\Documents\GitHub\AgenciaDeVuelo\ModeloEF\bin\Debug\ModeloEF.dll.config
+C:\Users\User\Documents\GitHub\AgenciaDeVuelo\ModeloEF\bin\Debug\ModeloEF.dll
+C:\Users\User\Documents\GitHub\AgenciaDeVuelo\ModeloEF\bin\Debug\ModeloEF.pdb
+C:\Users\User\Documents\GitHub\AgenciaDeVuelo\ModeloEF\bin\Debug\EntityFramework.dll
+C:\Users\User\Documents\GitHub\AgenciaDeVuelo\ModeloEF\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\User\Documents\GitHub\AgenciaDeVuelo\ModeloEF\bin\Debug\EntityFramework.xml
+C:\Users\User\Documents\GitHub\AgenciaDeVuelo\ModeloEF\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\User\Documents\GitHub\AgenciaDeVuelo\ModeloEF\obj\Debug\ModeloEF.csproj.AssemblyReference.cache
+C:\Users\User\Documents\GitHub\AgenciaDeVuelo\ModeloEF\obj\Debug\ModeloEF.csproj.CoreCompileInputs.cache
+C:\Users\User\Documents\GitHub\AgenciaDeVuelo\ModeloEF\obj\Debug\ModeloEF.csproj.CopyComplete
+C:\Users\User\Documents\GitHub\AgenciaDeVuelo\ModeloEF\obj\Debug\ModeloEF.dll
+C:\Users\User\Documents\GitHub\AgenciaDeVuelo\ModeloEF\obj\Debug\ModeloEF.pdb

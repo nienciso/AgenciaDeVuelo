@@ -9,7 +9,7 @@ namespace Persistencia
     public class Conexion
     {
         private static string _cnn =
-            @"Data Source=DESKTOP-75MO4J9\SQLEXPRESS;
+            @"Data Source=localhost;
               Initial Catalog=AgenciaDeVuelo;
               Integrated Security=true;";
 

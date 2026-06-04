@@ -10,3 +10,9 @@ C:\Users\User\OneDrive\Desktop\ANALISTA PROGRAMADOR WEB .NET\AgenciaDeVuelo\Enti
 C:\Users\User\OneDrive\Desktop\ANALISTA PROGRAMADOR WEB .NET\AgenciaDeVuelo\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
 C:\Users\User\OneDrive\Desktop\ANALISTA PROGRAMADOR WEB .NET\AgenciaDeVuelo\Entidades\obj\Debug\Entidades.dll
 C:\Users\User\OneDrive\Desktop\ANALISTA PROGRAMADOR WEB .NET\AgenciaDeVuelo\Entidades\obj\Debug\Entidades.pdb
+C:\Users\User\Documents\GitHub\AgenciaDeVuelo\Entidades\bin\Debug\Entidades.dll
+C:\Users\User\Documents\GitHub\AgenciaDeVuelo\Entidades\bin\Debug\Entidades.pdb
+C:\Users\User\Documents\GitHub\AgenciaDeVuelo\Entidades\obj\Debug\Entidades.csproj.AssemblyReference.cache
+C:\Users\User\Documents\GitHub\AgenciaDeVuelo\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\User\Documents\GitHub\AgenciaDeVuelo\Entidades\obj\Debug\Entidades.dll
+C:\Users\User\Documents\GitHub\AgenciaDeVuelo\Entidades\obj\Debug\Entidades.pdb
