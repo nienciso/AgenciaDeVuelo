@@ -1,0 +1,59 @@
+﻿@{
+    ViewBag.Title = "Alta de hospedaje";
+}
+
+<h2>Alta de hospedaje</h2>
+
+<form method="post">
+
+    <label>Código interno</label>
+    <input type="text" name="codigoInterno" class="form-control" maxlength="10" required />
+
+    <br />
+
+    <label>Nombre</label>
+    <input type="text" name="nombre" class="form-control" maxlength="80" required />
+
+    <br />
+
+    <label>Dirección</label>
+    <input type="text" name="direccion" class="form-control" maxlength="150" required />
+
+    <br />
+
+    <label>Tipo de hospedaje</label>
+    <select name="tipoHospedaje" class="form-control" required>
+        <option value="Hotel STD">Hotel STD</option>
+        <option value="Posada">Posada</option>
+        <option value="All Inclusive">All Inclusive</option>
+    </select>
+
+    <br />
+
+    <label>Precio noche/persona</label>
+    <input type="number" name="precioNochePersona" class="form-control" min="1" step="0.01" required />
+
+    <br />
+
+    <label>Estado</label>
+    <select name="codigoEstado" class="form-control" required>
+        @foreach (var e in ViewBag.Estados)
+        {
+            <option value="@e.Codigo">@e.Nombre - @e.Pais</option>
+        }
+    </select>
+
+    <br />
+
+    <input type="submit" value="Alta" class="btn btn-primary" />
+</form>
+
+@if (ViewBag.Mensaje != null)
+{
+    <br />
+    <div class="alert alert-info">@ViewBag.Mensaje</div>
+}
+
+<br />
+
+@Html.ActionLink("Volver", "Mantenimiento", "Hospedaje")

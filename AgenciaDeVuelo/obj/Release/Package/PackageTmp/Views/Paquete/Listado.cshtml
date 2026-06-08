@@ -1,0 +1,54 @@
+﻿@model List<Entidades.Paquete>
+
+@{
+    ViewBag.Title = "Listado general de paquetes";
+}
+
+<h2>Listado general de paquetes</h2>
+
+<form method="get">
+    <label>Filtrar por estado</label>
+    <select name="codigoEstado" class="form-control">
+        <option value="">-- Todos --</option>
+
+        @foreach (var e in ViewBag.Estados)
+        {
+            <option value="@e.Codigo" @(e.Codigo == ViewBag.CodigoEstado ? "selected" : "")>
+                @e.Nombre - @e.Pais
+            </option>
+        }
+    </select>
+
+    <br />
+
+    <input type="submit" value="Filtrar" class="btn btn-primary" />
+</form>
+
+<br />
+
+<table class="table">
+    <tr>
+        <th>Código</th>
+        <th>Título</th>
+        <th>Estado</th>
+        <th>Cantidad días</th>
+        <th>Detalle</th>
+    </tr>
+
+    @foreach (var p in Model)
+    {
+        <tr>
+            <td>@p.Codigo</td>
+            <td>@p.Titulo</td>
+            <td>@p.EstadoDestino.Nombre - @p.EstadoDestino.Pais</td>
+            <td>@p.CantDias</td>
+            <td>
+                @Html.ActionLink("Ver detalle", "Detalle", "Paquete", new { codigo = p.Codigo }, null)
+            </td>
+        </tr>
+    }
+</table>
+
+<br />
+
+@Html.ActionLink("Volver al menú principal", "Menu", "Empleado")

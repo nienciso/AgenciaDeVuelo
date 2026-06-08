@@ -1,0 +1,15 @@
+﻿@{
+    ViewBag.Title = "Mantenimiento de empleados";
+}
+
+<h2>Mantenimiento de empleados</h2>
+
+<ul>
+    <li>@Html.ActionLink("Alta de empleado", "Alta", "Empleado")</li>
+    <li>@Html.ActionLink("Buscar empleado", "Buscar", "Empleado")</li>
+    <li>@Html.ActionLink("Modificar empleado", "Modificar", "Empleado")</li>
+</ul>
+
+<br />
+
+@Html.ActionLink("Volver al menú principal", "Menu", "Empleado")

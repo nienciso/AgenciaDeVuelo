@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "Menu";
+}
+
+<h2>Menu</h2>
+
+<h2>Menú principal</h2>
+@Html.ActionLink( "Cerrar sesión", "CerrarSesion","Empleado",null,new { @class = "btn btn-danger" })
+
+<p>Menú :</p>
+
+<ul>
+    <li>@Html.ActionLink("Mantenimiento de Empleados", "Mantenimiento", "Empleado")</li>
+    <li>@Html.ActionLink("CRUD de Estados", "Mantenimiento", "Estado")</li>
+    <li>@Html.ActionLink("CRUD de Vuelos", "Mantenimiento", "Vuelo")</li>
+    <li>@Html.ActionLink("CRUD de Hospedajes", "Mantenimiento", "Hospedaje")</li>
+    <li>@Html.ActionLink("Alta Paquete de viaje", "Alta", "Paquete")</li>
+    <li>@Html.ActionLink("Listado de Hospedajes", "ListadoHospedajes", "Hospedaje")</li>
+    <li>@Html.ActionLink("Listado General de Paquetes", "Listado", "Paquete")</li>
+</ul>

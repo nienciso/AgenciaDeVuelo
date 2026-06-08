@@ -1,0 +1,51 @@
+﻿@model List<Entidades.Paquete>
+
+@{
+    ViewBag.Title = "Paquetes por hospedaje";
+}
+
+<h2>Paquetes asociados al hospedaje</h2>
+
+@if (ViewBag.Hospedaje != null)
+{
+    <p>
+        <strong>Hospedaje:</strong>
+        @ViewBag.Hospedaje.Nombre
+    </p>
+}
+
+@if (ViewBag.Mensaje != null)
+{
+    <div class="alert alert-info">
+        @ViewBag.Mensaje
+    </div>
+}
+
+<table class="table">
+    <tr>
+        <th>Código</th>
+        <th>Título</th>
+        <th>Fecha salida</th>
+        <th>Cantidad días</th>
+        <th>Precio individual</th>
+        <th>Precio doble</th>
+        <th>Precio triple</th>
+    </tr>
+
+    @foreach (var p in Model)
+    {
+        <tr>
+            <td>@p.Codigo</td>
+            <td>@p.Titulo</td>
+            <td>@p.VueloIda.FechaHoraPartida</td>
+            <td>@p.CantDias</td>
+            <td>@p.PrecioIndividual</td>
+            <td>@p.PrecioDoble</td>
+            <td>@p.PrecioTriple</td>
+        </tr>
+    }
+</table>
+
+<br />
+
+@Html.ActionLink("Volver al listado de hospedajes", "ListadoHospedajes", "Hospedaje")

@@ -1,0 +1,36 @@
+﻿@{
+    ViewBag.Title = "Buscar vuelo";
+}
+
+<h2>Buscar vuelo</h2>
+
+<form method="post">
+    <label>Código</label>
+    <input type="text" name="codigo" class="form-control" maxlength="10" required />
+
+    <br />
+
+    <input type="submit" value="Buscar" class="btn btn-primary" />
+</form>
+
+@if (ViewBag.Mensaje != null)
+{
+    <br />
+    <div class="alert alert-info">@ViewBag.Mensaje</div>
+}
+
+@if (ViewBag.Vuelo != null)
+{
+    <hr />
+    <p><strong>Código:</strong> @ViewBag.Vuelo.Codigo</p>
+    <p><strong>Fecha/hora partida:</strong> @ViewBag.Vuelo.FechaHoraPartida</p>
+    <p><strong>Estado partida:</strong> @ViewBag.Vuelo.EstadoPartida.Nombre - @ViewBag.Vuelo.EstadoPartida.Pais</p>
+    <p><strong>Fecha/hora llegada:</strong> @ViewBag.Vuelo.FechaHoraLlegada</p>
+    <p><strong>Estado llegada:</strong> @ViewBag.Vuelo.EstadoLlegada.Nombre - @ViewBag.Vuelo.EstadoLlegada.Pais</p>
+    <p><strong>Precio pasaje:</strong> @ViewBag.Vuelo.PrecioPasaje</p>
+    <p><strong>Activo:</strong> @ViewBag.Vuelo.Activo</p>
+}
+
+<br />
+
+@Html.ActionLink("Volver", "Mantenimiento", "Vuelo")

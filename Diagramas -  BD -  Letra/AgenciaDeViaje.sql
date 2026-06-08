@@ -1,9 +1,6 @@
 CREATE DATABASE AgenciaDeVuelo;
 GO
 
-select * from Paquetes;
-
-
 USE AgenciaDeVuelo;
 GO
 

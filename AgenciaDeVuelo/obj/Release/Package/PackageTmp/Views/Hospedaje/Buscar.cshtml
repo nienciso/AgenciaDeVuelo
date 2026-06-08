@@ -1,0 +1,36 @@
+﻿@{
+    ViewBag.Title = "Buscar hospedaje";
+}
+
+<h2>Buscar hospedaje</h2>
+
+<form method="post">
+    <label>Código interno</label>
+    <input type="text" name="codigoInterno" class="form-control" maxlength="10" required />
+
+    <br />
+
+    <input type="submit" value="Buscar" class="btn btn-primary" />
+</form>
+
+@if (ViewBag.Mensaje != null)
+{
+    <br />
+    <div class="alert alert-info">@ViewBag.Mensaje</div>
+}
+
+@if (ViewBag.Hospedaje != null)
+{
+    <hr />
+    <p><strong>Código interno:</strong> @ViewBag.Hospedaje.CodigoInterno</p>
+    <p><strong>Nombre:</strong> @ViewBag.Hospedaje.Nombre</p>
+    <p><strong>Dirección:</strong> @ViewBag.Hospedaje.Direccion</p>
+    <p><strong>Tipo:</strong> @ViewBag.Hospedaje.TipoHospedaje</p>
+    <p><strong>Precio noche/persona:</strong> @ViewBag.Hospedaje.PrecioNochePersona</p>
+    <p><strong>Estado:</strong> @ViewBag.Hospedaje.Estado.Nombre - @ViewBag.Hospedaje.Estado.Pais</p>
+    <p><strong>Activo:</strong> @ViewBag.Hospedaje.Activo</p>
+}
+
+<br />
+
+@Html.ActionLink("Volver", "Mantenimiento", "Hospedaje")

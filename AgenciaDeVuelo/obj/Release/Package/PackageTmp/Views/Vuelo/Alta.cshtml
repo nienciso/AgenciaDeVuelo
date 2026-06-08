@@ -1,0 +1,60 @@
+﻿@{
+    ViewBag.Title = "Alta de vuelo";
+}
+
+<h2>Alta de vuelo</h2>
+
+<form method="post">
+
+    <label>Código</label>
+    <input type="text" name="codigo" class="form-control" maxlength="10" required />
+
+    <br />
+
+    <label>Fecha/hora partida</label>
+    <input type="datetime-local" name="fechaHoraPartida" class="form-control" required />
+
+    <br />
+
+    <label>Estado partida</label>
+    <select name="codigoEstadoPartida" class="form-control" required>
+        @foreach (var e in ViewBag.Estados)
+        {
+            <option value="@e.Codigo">@e.Nombre - @e.Pais</option>
+        }
+    </select>
+
+    <br />
+
+    <label>Fecha/hora llegada</label>
+    <input type="datetime-local" name="fechaHoraLlegada" class="form-control" required />
+
+    <br />
+
+    <label>Estado llegada</label>
+    <select name="codigoEstadoLlegada" class="form-control" required>
+        @foreach (var e in ViewBag.Estados)
+        {
+            <option value="@e.Codigo">@e.Nombre - @e.Pais</option>
+        }
+    </select>
+
+    <br />
+
+    <label>Precio pasaje</label>
+    <input type="number" name="precioPasaje" class="form-control" min="1" step="0.01" required />
+
+    <br />
+
+    <input type="submit" value="Alta" class="btn btn-primary" />
+</form>
+
+@if (ViewBag.Mensaje != null)
+{
+    <br />
+    <div class="alert alert-info">@ViewBag.Mensaje</div>
+}
+
+<br />
+
+@Html.ActionLink("Volver", "Mantenimiento", "Vuelo")

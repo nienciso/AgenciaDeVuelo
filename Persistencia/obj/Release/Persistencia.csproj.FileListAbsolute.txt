@@ -1,0 +1,9 @@
+C:\Users\User\Documents\GitHub\AgenciaDeVuelo\Persistencia\bin\Release\Persistencia.dll
+C:\Users\User\Documents\GitHub\AgenciaDeVuelo\Persistencia\bin\Release\Persistencia.pdb
+C:\Users\User\Documents\GitHub\AgenciaDeVuelo\Persistencia\bin\Release\Entidades.dll
+C:\Users\User\Documents\GitHub\AgenciaDeVuelo\Persistencia\bin\Release\Entidades.pdb
+C:\Users\User\Documents\GitHub\AgenciaDeVuelo\Persistencia\obj\Release\Persistencia.csproj.AssemblyReference.cache
+C:\Users\User\Documents\GitHub\AgenciaDeVuelo\Persistencia\obj\Release\Persistencia.csproj.CoreCompileInputs.cache
+C:\Users\User\Documents\GitHub\AgenciaDeVuelo\Persistencia\obj\Release\Persistencia.csproj.CopyComplete
+C:\Users\User\Documents\GitHub\AgenciaDeVuelo\Persistencia\obj\Release\Persistencia.dll
+C:\Users\User\Documents\GitHub\AgenciaDeVuelo\Persistencia\obj\Release\Persistencia.pdb

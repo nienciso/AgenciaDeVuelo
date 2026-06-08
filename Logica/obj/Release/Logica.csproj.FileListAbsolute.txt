@@ -1,0 +1,11 @@
+C:\Users\User\Documents\GitHub\AgenciaDeVuelo\Logica\bin\Release\Logica.dll
+C:\Users\User\Documents\GitHub\AgenciaDeVuelo\Logica\bin\Release\Logica.pdb
+C:\Users\User\Documents\GitHub\AgenciaDeVuelo\Logica\bin\Release\Entidades.dll
+C:\Users\User\Documents\GitHub\AgenciaDeVuelo\Logica\bin\Release\Persistencia.dll
+C:\Users\User\Documents\GitHub\AgenciaDeVuelo\Logica\bin\Release\Entidades.pdb
+C:\Users\User\Documents\GitHub\AgenciaDeVuelo\Logica\bin\Release\Persistencia.pdb
+C:\Users\User\Documents\GitHub\AgenciaDeVuelo\Logica\obj\Release\Logica.csproj.AssemblyReference.cache
+C:\Users\User\Documents\GitHub\AgenciaDeVuelo\Logica\obj\Release\Logica.csproj.CoreCompileInputs.cache
+C:\Users\User\Documents\GitHub\AgenciaDeVuelo\Logica\obj\Release\Logica.csproj.CopyComplete
+C:\Users\User\Documents\GitHub\AgenciaDeVuelo\Logica\obj\Release\Logica.dll
+C:\Users\User\Documents\GitHub\AgenciaDeVuelo\Logica\obj\Release\Logica.pdb

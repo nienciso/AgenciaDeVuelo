@@ -1,0 +1,53 @@
+﻿@{
+    ViewBag.Title = "Alta de estado";
+}
+
+<h2>Alta de estado</h2>
+
+<form method="post">
+
+    <label>Código</label>
+    <input type="text"
+           name="codigo"
+           class="form-control"
+           minlength="4"
+           maxlength="5"
+           required />
+
+    <br />
+
+    <label>Nombre</label>
+    <input type="text"
+           name="nombre"
+           class="form-control"
+           maxlength="50"
+           required />
+
+    <br />
+
+    <label>País</label>
+    <input type="text"
+           name="pais"
+           class="form-control"
+           maxlength="50"
+           required />
+
+    <br />
+
+    <input type="submit"
+           value="Alta"
+           class="btn btn-primary" />
+
+</form>
+
+@if (ViewBag.Mensaje != null)
+{
+    <br />
+    <div class="alert alert-info">
+        @ViewBag.Mensaje
+    </div>
+}
+
+<br />
+
+@Html.ActionLink("Volver", "Mantenimiento", "Estado")

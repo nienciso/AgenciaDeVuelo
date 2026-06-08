@@ -1,0 +1,123 @@
+﻿@{
+    ViewBag.Title = "Modificar hospedaje";
+}
+
+<h2>Modificar hospedaje</h2>
+
+<form method="post">
+    <label>Código interno</label>
+    <input type="text" name="codigoInterno" class="form-control" maxlength="10" required />
+
+    <br />
+
+    <input type="submit" value="Buscar" class="btn btn-primary" />
+</form>
+
+@if (ViewBag.Mensaje != null)
+{
+    <br />
+    <div class="alert alert-info">@ViewBag.Mensaje</div>
+}
+
+@if (ViewBag.Hospedaje != null)
+{
+    <hr />
+
+    <form method="post" action="/Hospedaje/GuardarModificacion">
+
+        <label>Código interno</label>
+        <input type="text"
+               name="codigoInterno"
+               value="@ViewBag.Hospedaje.CodigoInterno"
+               readonly
+               class="form-control" />
+
+        <br />
+
+        <label>Nombre</label>
+        <input type="text"
+               name="nombre"
+               value="@ViewBag.Hospedaje.Nombre"
+               maxlength="80"
+               required
+               class="form-control" />
+
+        <br />
+
+        <label>Dirección</label>
+        <input type="text"
+               name="direccion"
+               value="@ViewBag.Hospedaje.Direccion"
+               maxlength="150"
+               required
+               class="form-control" />
+
+        <br />
+
+        <label>Tipo de hospedaje</label>
+        <select name="tipoHospedaje" class="form-control" required>
+
+            <option value="Hotel STD"
+                    @(ViewBag.Hospedaje.TipoHospedaje == "Hotel STD" ? "selected" : "")>
+                Hotel STD
+            </option>
+
+            <option value="Posada"
+                    @(ViewBag.Hospedaje.TipoHospedaje == "Posada" ? "selected" : "")>
+                Posada
+            </option>
+
+            <option value="All Inclusive"
+                    @(ViewBag.Hospedaje.TipoHospedaje == "All Inclusive" ? "selected" : "")>
+                All Inclusive
+            </option>
+
+        </select>
+
+        <br />
+
+        <label>Precio noche/persona</label>
+        <input type="number"
+               name="precioNochePersona"
+               value="@ViewBag.Hospedaje.PrecioNochePersona"
+               class="form-control"
+               min="1"
+               step="0.01"
+               required />
+
+        <br />
+
+        <label>Estado</label>
+        <select name="codigoEstado" class="form-control" required>
+
+            @foreach (var e in ViewBag.Estados)
+            {
+                <option value="@e.Codigo"
+                        @(e.Codigo == ViewBag.Hospedaje.Estado.Codigo ? "selected" : "")>
+
+                    @e.Nombre - @e.Pais
+
+                </option>
+            }
+
+        </select>
+
+        <br />
+
+        <label>Activo</label>
+        <input type="checkbox"
+               name="activo"
+               value="true"
+               @(ViewBag.Hospedaje.Activo ? "checked" : "") />
+
+        <br /><br />
+
+        <input type="submit"
+               value="Guardar cambios"
+               class="btn btn-warning" />
+    </form>
+}
+
+<br />
+
+@Html.ActionLink("Volver", "Mantenimiento", "Hospedaje")

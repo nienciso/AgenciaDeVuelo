@@ -1,0 +1,5 @@
+C:\Users\User\Documents\GitHub\AgenciaDeVuelo\Entidades\bin\Release\Entidades.dll
+C:\Users\User\Documents\GitHub\AgenciaDeVuelo\Entidades\bin\Release\Entidades.pdb
+C:\Users\User\Documents\GitHub\AgenciaDeVuelo\Entidades\obj\Release\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\User\Documents\GitHub\AgenciaDeVuelo\Entidades\obj\Release\Entidades.dll
+C:\Users\User\Documents\GitHub\AgenciaDeVuelo\Entidades\obj\Release\Entidades.pdb
