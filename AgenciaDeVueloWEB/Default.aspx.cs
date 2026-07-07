@@ -206,10 +206,25 @@ namespace AgenciaDeVueloWEB
             object sender,
             GridViewPageEventArgs e)
         {
-            gvPaquetes.PageIndex =
-                e.NewPageIndex;
+            gvPaquetes.PageIndex = e.NewPageIndex;
 
-            btnFiltrar_Click(null, null);
+            string codigoEstado = ddlEstados.SelectedValue;
+
+            int? maxDias = null;
+            int? mes = null;
+            int? anio = null;
+
+            if (!string.IsNullOrWhiteSpace(txtMaxDias.Text))
+                maxDias = Convert.ToInt32(txtMaxDias.Text);
+
+            if (!string.IsNullOrWhiteSpace(txtMes.Text) &&
+                !string.IsNullOrWhiteSpace(txtAnio.Text))
+            {
+                mes = Convert.ToInt32(txtMes.Text);
+                anio = Convert.ToInt32(txtAnio.Text);
+            }
+
+            CargarGrilla(codigoEstado, maxDias, mes, anio);
         }
 
         protected void gvPaquetes_SelectedIndexChanged(

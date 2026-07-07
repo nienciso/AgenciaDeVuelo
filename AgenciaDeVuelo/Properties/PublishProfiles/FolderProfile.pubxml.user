@@ -5,14 +5,14 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <_PublishTargetUrl>C:\Users\User\Desktop\publicar\AgenciaDeVueloEmpleado</_PublishTargetUrl>
-    <History>True|2026-06-08T17:59:13.6993574Z;True|2026-06-08T14:58:16.8648641-03:00;True|2026-06-08T14:57:05.4470509-03:00;True|2026-06-08T14:53:06.4188594-03:00;True|2026-06-08T14:52:13.1268516-03:00;True|2026-06-04T15:48:16.9942457-03:00;True|2026-06-04T15:19:58.2427147-03:00;</History>
+    <History>True|2026-07-07T03:23:42.7120475Z;True|2026-07-06T22:04:58.6357574-03:00;</History>
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/AgenciaDeVuelo.dll">
-      <publishTime>06/08/2026 14:59:13</publishTime>
+      <publishTime>06/07/2026 22:04:57</publishTime>
     </File>
     <File Include="bin/AgenciaDeVuelo.pdb">
-      <publishTime>06/08/2026 14:59:13</publishTime>
+      <publishTime>06/07/2026 22:04:57</publishTime>
     </File>
     <File Include="bin/Antlr3.Runtime.dll">
       <publishTime>04/06/2026 13:52:20</publishTime>
@@ -48,10 +48,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>04/06/2026 13:52:20</publishTime>
     </File>
     <File Include="bin/Logica.dll">
-      <publishTime>04/06/2026 15:19:56</publishTime>
+      <publishTime>06/07/2026 22:04:56</publishTime>
     </File>
     <File Include="bin/Logica.pdb">
-      <publishTime>04/06/2026 15:19:56</publishTime>
+      <publishTime>06/07/2026 22:04:56</publishTime>
     </File>
     <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
       <publishTime>04/06/2026 13:52:21</publishTime>
@@ -63,10 +63,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>04/06/2026 13:52:21</publishTime>
     </File>
     <File Include="bin/Persistencia.dll">
-      <publishTime>04/06/2026 15:19:56</publishTime>
+      <publishTime>06/07/2026 22:04:56</publishTime>
     </File>
     <File Include="bin/Persistencia.pdb">
-      <publishTime>04/06/2026 15:19:56</publishTime>
+      <publishTime>06/07/2026 22:04:56</publishTime>
     </File>
     <File Include="bin/roslyn/csc.exe">
       <publishTime>04/06/2026 13:52:21</publishTime>

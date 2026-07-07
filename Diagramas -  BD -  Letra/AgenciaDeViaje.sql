@@ -4,6 +4,8 @@ GO
 USE AgenciaDeVuelo;
 GO
 
+select * from Empleados;
+
 
 CREATE TABLE Empleados
 (
@@ -39,7 +41,6 @@ CREATE TABLE Estados
     Activo BIT NOT NULL DEFAULT 1
 );
 GO
-
 
 CREATE TABLE Vuelos
 (
@@ -194,30 +195,40 @@ BEGIN
     IF @Contrasenia NOT LIKE '%[^A-Za-z0-9]%'
         RETURN -5;
 
-    INSERT INTO Empleados
-    VALUES (@Usuario, @Contrasenia, @NombreCompleto, 1);
+    BEGIN TRY
+        BEGIN TRANSACTION;
 
-    DECLARE @Sql NVARCHAR(MAX);
+        INSERT INTO Empleados
+        VALUES (@Usuario, @Contrasenia, @NombreCompleto, 1);
 
-    SET @Sql =
-        'CREATE LOGIN [' + @Usuario + '] 
-         WITH PASSWORD = ''' + @Contrasenia + ''',
-         CHECK_POLICY = OFF';
+        DECLARE @Consulta NVARCHAR(MAX);
 
-    EXEC(@Sql);
+        SET @Consulta =
+            'CREATE LOGIN [' + @Usuario + '] 
+             WITH PASSWORD = ''' + @Contrasenia + ''',
+             CHECK_POLICY = OFF';
 
-    SET @Sql =
-        'CREATE USER [' + @Usuario + '] 
-         FOR LOGIN [' + @Usuario + ']';
+        EXEC(@Consulta);
 
-    EXEC(@Sql);
+        SET @Consulta =
+            'CREATE USER [' + @Usuario + '] 
+             FOR LOGIN [' + @Usuario + ']';
 
-    SET @Sql =
-        'GRANT EXECUTE TO [' + @Usuario + ']';
+        EXEC(@Consulta);
 
-    EXEC(@Sql);
+        SET @Consulta =
+            'GRANT EXECUTE TO [' + @Usuario + ']';
 
-    RETURN 1;
+        EXEC(@Consulta);
+
+        COMMIT TRANSACTION;
+        RETURN 1;
+    END TRY
+
+    BEGIN CATCH
+        ROLLBACK TRANSACTION;
+        RETURN -99;
+    END CATCH
 END;
 GO
 
